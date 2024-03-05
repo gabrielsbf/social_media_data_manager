@@ -64,6 +64,7 @@ def return_period(date_array=None):
             "num_mes":str(start_date_parsed.month),
             "dia" :str(start_date_parsed.day),
             "ano" :str(start_date_parsed.year),
+            "date_parsed" : start_date_parsed.strftime("%d_%m_%Y"),
             "unix_time": str(int(time.mktime(start_date_parsed.timetuple())) - int(10800))
         },
 
@@ -72,6 +73,7 @@ def return_period(date_array=None):
             "num_mes": str(final_date_parsed.month),
             "dia" : str(final_date_parsed.day),
             "ano" : str(final_date_parsed.year),
+            "date_parsed" : final_date_parsed.strftime("%d_%m_%Y"),
             "unix_time" : str(int(time.mktime(final_date_parsed.timetuple())) + int(10800))
         }
     }
