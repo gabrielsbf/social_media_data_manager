@@ -76,7 +76,7 @@ Digite 3 para mesclado: ''')
 			if metrics_ == '2' or metrics_ == '3':
 				face_metrics = s_manager.face_post_metrics(face_desc)
 				s_manager.writeJsonFile(f"{since_date_arch}_a_{until_date_arch}_face_metrics", face_metrics, JSFILES_PATH)
-				
+
 		if i == 'instagram':
 			insta_req = s_manager.insta_description([media[1]["start_date"]["date_parsed"], media[1]["final_date"]["date_parsed"]])
 			insta_desc = insta_req[0]
