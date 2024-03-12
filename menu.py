@@ -11,11 +11,11 @@ def select_user():
 	section = read_sections()
 	while sectionc == []:
 		user_a = input("Digite o Nome do usuario solicitado:")
-		print("input do usuário ", user_a)
 		list_v = list (filter(lambda x: str(x).find("section") >= 0, section))
-		print("lista antes do filtro", list_v)
 		sectionc = list (filter(lambda x: str(x) == user_a, list_v))
-
+		if sectionc == []:
+			print(f"{user_a} não é um usuário")
+	print("Usuário selecionado foi ", sectionc[0])
 	return (sectionc[0])
 
 
