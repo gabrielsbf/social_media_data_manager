@@ -85,3 +85,5 @@ Digite 3 para mesclado: ''')
 			if metrics_ == '2' or metrics_ == '3':
 				insta_metrics = s_manager.insta_metrics(insta_desc)
 				s_manager.writeJsonFile(f"{since_date_arch}_a_{until_date_arch}_insta_metrics", insta_metrics, JSFILES_PATH)
+
+main_menu()
