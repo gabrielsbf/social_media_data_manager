@@ -236,21 +236,6 @@ class Social_Manager:
 		new_videos = list(map(self.face_video_metric_unique_metrics, videos))
 		return new_videos
 
-
-	def face_all_data(self, date_optional=None):
-		js_desc_obj = self.face_description(date_optional)
-		def returning_dict(desc_obj):
-			metric_obj = self.face_post_unique_metrics(desc_obj)
-			del metric_obj["post_id"]
-			dict_new = {i: desc_obj.get(i) for i in desc_obj.keys()}
-			# print("dict_before: ", dict_new)
-			dict_metrics = {i : metric_obj.get(i) for i in metric_obj.keys()}
-			dict_new.update(dict_metrics)
-			# print("dict_after: ", dict_new)
-			return dict_new
-		all_data_obj = list(map(returning_dict, js_desc_obj))
-		return all_data_obj
-
 	def insta_description(self, date_optional=None):
 		date_obj = return_period(date_optional)
 		request_validated = self.endpoints('insta_desc', date_obj)
