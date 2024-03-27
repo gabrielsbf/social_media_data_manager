@@ -6,5 +6,4 @@ from srcs.sheets_operation import *
 
 
 if __name__ == "__main__":
-    # sheet_op()
     input_data()
