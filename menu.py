@@ -7,9 +7,18 @@ from utils.date_formats import *
 
 def select_user():
 	"""
-	---------------------------------------------------------------------------------
+	----
+	Description:
+	----
 	Function that receives input from the user determines whether it is a valid user
-	---------------------------------------------------------------------------------
+
+	----
+	Package contents:
+	----
+	Social_manager,
+	read_sections.
+
+	-----
 	"""
 	sectionc = []
 	section = read_sections()
@@ -24,9 +33,20 @@ def select_user():
 
 def main_menu():
 	"""
-	----------------------------------------------------------------------------------------------------------
-	#Function that makes the user select an option in the input and determines whether it is a valid selection
-	----------------------------------------------------------------------------------------------------------
+	-----
+	Description:
+	-----
+	Function that makes the user select an option in the input and determines whether it is a valid selection.
+
+	-----
+	Package contents:
+	-----
+	Social_manager,
+	convertXlsx,
+	select_mertrics,
+	select_user.
+	
+
 	"""
 	is_match = True
 	while is_match:
@@ -49,9 +69,15 @@ def main_menu():
 
 def select_media():
 	"""
-	--------------------------------------------------------------------
-	Request and receive the desired network and determine if it is valid
-	--------------------------------------------------------------------
+	----
+	Description:
+	----
+	Request the desired network and determine if it is valid.
+	
+	----
+	Package contents:
+	----
+	No Packs.
 	"""
 	social_media = []
 	while True :
@@ -80,12 +106,16 @@ def select_metric(s_manager : Social_Manager ,media):
 	----
 	Description: 
 	----
-	Receives input from the user and delivers the desired type of data 
+	Receives input from the user and delivers the desired type of data.
 
 	----
 	Package:
 	----
-	Social_media - class
+	writeJsonFile,
+	Social_media,
+	face_description,
+	JSFILES_PATH.
+	
 
 	"""	
 	metrics_ = input(''' Digite 1 para apenas descritivo

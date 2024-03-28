@@ -5,22 +5,12 @@ import gspread
 ct = gspread.service_account('./utils/credentials.json')
 sh = ct.open_by_key("1qHsjCl9FEPiXsdjxbLJBa1-B-WAB10_NcSh24isUJmQ")
 worksheet = sh.worksheet('Mar')
-"""
------------------------------------------------------------------------
-Variables that receive values ​​and functions that bridge the sheets
------------------------------------------------------------------------
-"""
 
 account = Social_Manager('section_m')
 file = account.getJsonFile("facebook", file_folder="test_sheets")
 
 def input_data():
     """
-        ----
-        Name:
-        ----
-        input_data
-        
         ----
         Description: 
         ----
@@ -31,7 +21,7 @@ def input_data():
         ----
         Package Contents:
         ----
-        gspread (Package)
+        gspread.
 
     """
     message, url, sr_time = [],[],[]
@@ -43,3 +33,4 @@ def input_data():
     worksheet.update(url, 'H3')
     worksheet.update(sr_time, 'E3')
 
+k
