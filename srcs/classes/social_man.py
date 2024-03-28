@@ -49,6 +49,21 @@ class Social_Manager:
 		return response.json()
 
 	def	test_req(self):
+		"""
+		----
+		Name:
+		----
+		test_req
+
+		----
+		Description: 
+		----
+
+		----
+		Package Content:
+		----
+		
+		"""
 		url_test = "https://graph.facebook.com/v19.0/me?fields=id%2Cname&access_token="
 		token = "" if self.cred.get("token_30days") == None else self.cred["token_30days"]
 		response = self.fetch_data(url_test + token)

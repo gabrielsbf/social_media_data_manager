@@ -29,6 +29,18 @@ def menuConvert_xlsx():
     return archive
 
 def convertJsonToPd(file):
+    """
+	    
+        Description:
+        ------
+        Normalize semi-structured JSON data in a pandas DataFrame.
+        
+        Package contents:
+        ------
+        panda as pd (json_normalize, to_excel), 
+        json (load).
+
+	"""
     fileName = file.split(".")[0]
     with open(JSFILES_PATH +'/'+ file) as json_obj:
         json_data = json.load(json_obj)

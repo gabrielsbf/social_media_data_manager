@@ -6,7 +6,20 @@ from utils.env_p import *
 from utils.date_formats import *
 
 def select_user():
+	"""
+	----
+	Description:
+	----
+	Function that receives input from the user determines whether it is a valid user
 
+	----
+	Package contents:
+	----
+	Social_manager,
+	read_sections.
+
+	-----
+	"""
 	sectionc = []
 	section = read_sections()
 	while sectionc == []:
@@ -18,8 +31,23 @@ def select_user():
 	print("Usuário selecionado foi ", sectionc[0])
 	return (sectionc[0])
 
-
 def main_menu():
+	"""
+	-----
+	Description:
+	-----
+	Function that makes the user select an option in the input and determines whether it is a valid selection.
+
+	-----
+	Package contents:
+	-----
+	Social_manager,
+	convertXlsx,
+	select_mertrics,
+	select_user.
+	
+
+	"""
 	is_match = True
 	while is_match:
 		option = input("""Selecione uma das opçoes abaixo
@@ -37,7 +65,20 @@ def main_menu():
 				case _:
 					print("Selecione uma opção válida.")
 
+
+
 def select_media():
+	"""
+	----
+	Description:
+	----
+	Request the desired network and determine if it is valid.
+	
+	----
+	Package contents:
+	----
+	No Packs.
+	"""
 	social_media = []
 	while True :
 		choose_media = input("""Selecione qual rede deseja
@@ -59,7 +100,24 @@ def select_media():
 	date = return_period()
 	return [social_media, date]
 
+
 def select_metric(s_manager : Social_Manager ,media):
+	"""
+	----
+	Description: 
+	----
+	Receives input from the user and delivers the desired type of data.
+
+	----
+	Package:
+	----
+	writeJsonFile,
+	Social_media,
+	face_description,
+	JSFILES_PATH.
+	
+
+	"""	
 	metrics_ = input(''' Digite 1 para apenas descritivo
 Digite 2 para apenas dados
 Digite 3 para mesclado: ''')
@@ -85,5 +143,5 @@ Digite 3 para mesclado: ''')
 			if metrics_ == '2' or metrics_ == '3':
 				insta_metrics = s_manager.insta_metrics(insta_desc)
 				s_manager.writeJsonFile(f"{since_date_arch}_a_{until_date_arch}_insta_metrics", insta_metrics, JSFILES_PATH)
-
+		
 main_menu()
