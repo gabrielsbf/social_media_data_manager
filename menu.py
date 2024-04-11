@@ -45,7 +45,7 @@ def main_menu():
 	convertXlsx,
 	select_mertrics,
 	select_user.
-	
+
 
 	"""
 	is_match = True
@@ -73,7 +73,7 @@ def select_media():
 	Description:
 	----
 	Request the desired network and determine if it is valid.
-	
+
 	----
 	Package contents:
 	----
@@ -104,7 +104,7 @@ def select_media():
 def select_metric(s_manager : Social_Manager ,media):
 	"""
 	----
-	Description: 
+	Description:
 	----
 	Receives input from the user and delivers the desired type of data.
 
@@ -115,9 +115,9 @@ def select_metric(s_manager : Social_Manager ,media):
 	Social_media,
 	face_description,
 	JSFILES_PATH.
-	
 
-	"""	
+
+	"""
 	metrics_ = input(''' Digite 1 para apenas descritivo
 Digite 2 para apenas dados
 Digite 3 para mesclado: ''')
@@ -143,5 +143,5 @@ Digite 3 para mesclado: ''')
 			if metrics_ == '2' or metrics_ == '3':
 				insta_metrics = s_manager.insta_metrics(insta_desc)
 				s_manager.writeJsonFile(f"{since_date_arch}_a_{until_date_arch}_insta_metrics", insta_metrics, JSFILES_PATH)
-		
-main_menu()
+
+

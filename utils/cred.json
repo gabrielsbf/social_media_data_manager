@@ -1,0 +1,13 @@
+{
+    "installed": {
+        "client_id": "79273162569-di6v0mtl089p74rg9v98ek8oiupmatu0.apps.googleusercontent.com",
+        "project_id": "tidal-solstice-324717",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret": "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",
+        "redirect_uris": [
+            "http://localhost"
+        ]
+    }
+}
