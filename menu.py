@@ -7,6 +7,11 @@ from utils.date_formats import *
 
 def select_user():
 	"""
+	----
+	Description:
+	----
+	Function that receives input from the user determines whether it is a valid user
+=======
     Selects a user from a list of sections.
 
     Returns:
@@ -17,8 +22,14 @@ def select_user():
         Enter the name of the requested user: Alice
         Selected user is Alice
         'Alice'
-    """
+	----
+	Package contents:
+	----
+	Social_manager,
+	read_sections.
 
+	-----
+	"""
 	sectionc = []
 	section = read_sections()
 	while sectionc == []:
@@ -30,9 +41,23 @@ def select_user():
 	print("Usuário selecionado foi ", sectionc[0])
 	return (sectionc[0])
 
-
 def main_menu():
 	"""
+	-----
+	Description:
+	-----
+	Function that makes the user select an option in the input and determines whether it is a valid selection.
+
+	-----
+	Package contents:
+	-----
+	Social_manager,
+	convertXlsx,
+	select_mertrics,
+	select_user.
+
+
+=======
     Displays the main menu and executes the action corresponding to the option chosen by the user.
 
     Returns:
@@ -63,8 +88,20 @@ def main_menu():
 				case _:
 					print("Selecione uma opção válida.")
 
+
+
 def select_media():
 	"""
+	----
+	Description:
+	----
+	Request the desired network and determine if it is valid.
+
+	----
+	Package contents:
+	----
+	No Packs.
+=======
     Permite ao usuário selecionar as redes sociais das quais deseja extrair dados.
 
     Retorna:
@@ -101,8 +138,23 @@ def select_media():
 	date = return_period()
 	return [social_media, date]
 
+
 def select_metric(s_manager : Social_Manager ,media):
 	"""
+	----
+	Description:
+	----
+	Receives input from the user and delivers the desired type of data.
+
+	----
+	Package:
+	----
+	writeJsonFile,
+	Social_media,
+	face_description,
+	JSFILES_PATH.
+
+=======
     Allows the user to select the desired type of metric and generates files with the corresponding data.
 
     Arguments:
@@ -145,4 +197,4 @@ Digite 3 para mesclado: ''')
 				insta_metrics = s_manager.insta_metrics(insta_desc)
 				s_manager.writeJsonFile(f"{since_date_arch}_a_{until_date_arch}_insta_metrics", insta_metrics, JSFILES_PATH)
 
-main_menu()
+
