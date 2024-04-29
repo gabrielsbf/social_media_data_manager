@@ -11,7 +11,17 @@ def select_user():
 	Description:
 	----
 	Function that receives input from the user determines whether it is a valid user
+=======
+    Selects a user from a list of sections.
 
+    Returns:
+        str: The name of the selected user.
+
+    Example:
+        >>> select_user()
+        Enter the name of the requested user: Alice
+        Selected user is Alice
+        'Alice'
 	----
 	Package contents:
 	----
@@ -47,7 +57,20 @@ def main_menu():
 	select_user.
 
 
-	"""
+=======
+    Displays the main menu and executes the action corresponding to the option chosen by the user.
+
+    Returns:
+        None
+
+    Example:
+        >>> main_menu()
+        Select one of the options below
+        1 - Convert .json files to .xlsx
+        2 - Extract meta data (Facebook and Instagram)
+        1
+        (Action of converting .json files to .xlsx is executed)
+    """
 	is_match = True
 	while is_match:
 		option = input("""Selecione uma das opçoes abaixo
@@ -78,7 +101,22 @@ def select_media():
 	Package contents:
 	----
 	No Packs.
-	"""
+=======
+    Permite ao usuário selecionar as redes sociais das quais deseja extrair dados.
+
+    Retorna:
+        list: Uma lista contendo a(s) rede(s) social(is) selecionada(s) e o período desejado.
+
+    Exemplo:
+        >>> select_media()
+        Selecione qual rede deseja
+        1 - Facebook
+        2 - Instagram
+        3 - Terminar:
+        1
+        (Ação de selecionar a rede social Facebook é executada)
+        ['facebook', período_selecionado]
+    """
 	social_media = []
 	while True :
 		choose_media = input("""Selecione qual rede deseja
@@ -116,8 +154,23 @@ def select_metric(s_manager : Social_Manager ,media):
 	face_description,
 	JSFILES_PATH.
 
+=======
+    Allows the user to select the desired type of metric and generates files with the corresponding data.
 
-	"""
+    Arguments:
+        s_manager (Social_Manager): An instance of the social media manager.
+        media (list): A list containing the selected social media platform(s) and the desired period.
+
+    Returns:
+        None
+
+    Example:
+        >>> select_metric(s_manager, ['facebook', 'instagram'], selected_period)
+        Enter 1 for descriptive only
+        Enter 2 for data only
+        Enter 3 for merged: 3
+        (Action of selecting metric and generating corresponding files is executed)
+    """
 	metrics_ = input(''' Digite 1 para apenas descritivo
 Digite 2 para apenas dados
 Digite 3 para mesclado: ''')

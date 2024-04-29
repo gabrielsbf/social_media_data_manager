@@ -18,8 +18,55 @@ months = {
             }
 
 def return_period(date_array=None):
+    """
+    Asks the user to select a time period, with a start date and an end date.
+
+    Arguments:
+        date_array (list, optional): A list containing the start date and the end date in the format [start_date, end_date].
+
+    Returns:
+        list: A list containing the datetime objects of the selected start and end dates.
+
+    Example:
+        >>> return_period()
+        Enter the start date in dd/mm/yyyy format: 01/01/2023
+        Enter the end date in dd/mm/yyyy format: 31/01/2023
+        [datetime.datetime(2023, 1, 1, 0, 0), datetime.datetime(2023, 1, 31, 23, 59, 59)]
+    """
 
     def loop_data():
+        """
+    Requests the user to select a time period, with a start date and an end date.
+
+    Returns:
+        dict: A dictionary containing information about the start date and the end date, including month, day, year,
+              parsed dates, and Unix time.
+
+    Example:
+        >>> loop_data()
+        Enter the start date in dd/mm/yyyy format: 01/01/2023
+        Enter the end date in dd/mm/yyyy format: 31/01/2023
+        {
+            "start_date": {
+                "month": "January",
+                "num_month": "1",
+                "day": "1",
+                "year": "2023",
+                "date_parsed_": "01_01_2023",
+                "date_parsed": "01/01/2023",
+                "unix_time": "timestamp_unix"
+            },
+            "final_date": {
+                "month": "January",
+                "num_month": "1",
+                "day": "31",
+                "year": "2023",
+                "date_parsed_": "31_01_2023",
+                "date_parsed": "31/01/2023",
+                "unix_time": "timestamp_unix"
+            }
+        }
+    """
         if date_array == None:
             start_date = input("selecione a data inicial em formato dd/mm/yyyy: ")
             final_date = input("selecione a data final em formato dd/mm/yyyy: ")
@@ -83,20 +130,39 @@ def return_period(date_array=None):
     return dates
 
 def month_year():
-	since_month_input = input("select the begin month by writing 'month/year':\nmonth have a format mm, and year have a format yyyy: ")
-	until_month_input = input("select the end month by writing 'month/year':\nmonth have a format mm, and year have a format yyyy: ")
-	split_since_month = since_month_input.split('/')
-	split_until_month = until_month_input.split('/')
+    """    
+    Requests the user to select a start and end month by specifying the month and year in the format 'month/year'.
 
-	last_day_since = calendar.monthrange(int(split_since_month[1]), int(split_since_month[0]))[1]
-	last_day_until = calendar.monthrange(int(split_until_month[1]), int(split_until_month[0]))[1]
-	start_date_parsed = datetime.datetime(int(split_since_month[1]), int(split_since_month[0]), last_day_since, 0, 0, 0)
-	end_date_parsed = datetime.datetime(int(split_until_month[1]), int(split_until_month[0]),last_day_until, 0, 0, 0)
+    Returns:
+        dict: A dictionary containing the start and end dates of the selected months, along with their respective month-year representations.
 
-	dates = {
+    Example:
+        >>> month_year()
+        select the begin month by writing 'month/year':
+        month have a format mm, and year have a format yyyy: 01/2023
+        select the end month by writing 'month/year':
+        month have a format mm, and year have a format yyyy: 12/2023
+        {
+            "start_date": datetime.datetime(2023, 1, 31, 0, 0),
+            "end_date": datetime.datetime(2023, 12, 31, 0, 0),
+            "start_month": "01-2023",
+            "end_month": "12-2023"
+        }
+    """
+    since_month_input = input("select the begin month by writing 'month/year':\nmonth have a format mm, and year have a format yyyy: ")
+    until_month_input = input("select the end month by writing 'month/year':\nmonth have a format mm, and year have a format yyyy: ")
+    split_since_month = since_month_input.split('/')
+    split_until_month = until_month_input.split('/')
+
+    last_day_since = calendar.monthrange(int(split_since_month[1]), int(split_since_month[0]))[1]
+    last_day_until = calendar.monthrange(int(split_until_month[1]), int(split_until_month[0]))[1]
+    start_date_parsed = datetime.datetime(int(split_since_month[1]), int(split_since_month[0]), last_day_since, 0, 0, 0)
+    end_date_parsed = datetime.datetime(int(split_until_month[1]), int(split_until_month[0]),last_day_until, 0, 0, 0)
+
+    dates = {
 		"start_date" : start_date_parsed,
 		"end_date" : end_date_parsed,
         "start_month": split_since_month[0] + "-" + split_since_month[1],
         "end_month": split_until_month[0] + "-" + split_until_month[1]
 	}
-	return dates
+    return dates
