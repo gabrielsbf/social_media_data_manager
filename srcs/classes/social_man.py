@@ -135,7 +135,7 @@ class Social_Manager:
 		face_request = self.makeRequest(request_validated,
 										media=self.cred['face_id'],
 										token=self.cred['token_30days'])
-
+		print(face_request)
 		description_data = list(face_request[0]["data"])
 
 	#print("First Dict JSON New", description_data)
