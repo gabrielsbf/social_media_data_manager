@@ -82,6 +82,10 @@ def select_media():
     """
 	social_media = []
 	while True :
+		print("você escolheu ->", social_media)
+		if social_media == ['facebook', 'instagram']:
+			break
+
 		choose_media = input("""Selecione qual rede deseja
 					1 - Facebook
 					2 - Instagram
@@ -89,14 +93,20 @@ def select_media():
 					""")
 		match choose_media:
 			case '1':
-				social_media.append('facebook')
+				if social_media.count("facebook") == 0:
+					social_media.insert(0, 'facebook')
+				else:
+					print("Você já escolheu essa rede")		
 			case '2':
-				social_media.append('instagram')
+				if social_media.count("instagram") == 0:
+					social_media.insert(1, 'instagram')
+				else:
+					print("Você já escolheu essa rede")		
 			case _:
 				if not social_media == []:
 					break
 				else :
-					print("Você não selecionou nenhuma rede")
+					print("Você não selecionou nenhuma rede\nPressione CTRL+C para sair")
 
 	date = return_period()
 	return [social_media, date]
