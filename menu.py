@@ -83,6 +83,7 @@ def main_menu():
 					is_match = False
 				case "2":
 					s_manager = Social_Manager(select_user())
+					s_manager.test_req()
 					select_metric(s_manager, select_media())
 					is_match = False
 				case _:
