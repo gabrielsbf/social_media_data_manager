@@ -1,5 +1,5 @@
-
-CONFIG_PATH = './utils/config.ini'
+from utils.cfg import *
+CONFIG_PATH = CFG_PATH
 
 JSFILES_PATH = './data'
 
