@@ -3,3 +3,4 @@ __pycache__
 data/*.json
 data/xlsx/*.xlsx
 utils/credentials.json
+utils/cfg.py

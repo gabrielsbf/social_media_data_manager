@@ -229,7 +229,6 @@ class Social_Manager:
 		return new_metrics
 
 	def face_video_metric_unique_metrics(self, video_obj):
-		self.test_req()
 		resp = self.makeRequest(video_obj["post_id"] + self.endpoints('face_video_metric'),
 						token=self.cred["token_30days"])
 		metrics = resp[0]["data"]
