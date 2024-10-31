@@ -177,11 +177,9 @@ class Social_Manager:
 		if request_validated1 == False or request_validated2 == False:
 			return False
 		print(data_obj)
-		data = self.makeRequest(data_obj["post_id"] +
-								request_validated1,
-								data_obj["post_id"] +
-								request_validated2,
-								token=self.cred['token_30days'])
+		data = self.makeRequest(data_obj["post_id"] + request_validated1,
+					data_obj["post_id"] + request_validated2,
+					token=self.cred['token_30days'])
 
 		metrics_col = {}
 		metrics_col["post_id"] = data_obj["post_id"]

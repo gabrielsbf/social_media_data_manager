@@ -7,7 +7,9 @@
 
 	"face_post_desc": ["?fields=permalink_url,created_time,message,id,story"],
 
-	"face_metric1" :["/insights?metric=post_impressions_unique,post_reactions_by_type_total,post_clicks_unique,post_engaged_users,post_engaged_fan"],
+	"face_metric1-deprecated" :["/insights?metric=post_impressions_unique,post_reactions_by_type_total,post_clicks_unique,post_engaged_users,post_engaged_fan"],
+
+	"face_metric1" :["/insights?metric=post_impressions_unique,post_reactions_by_type_total"],
 
 	"face_metric2":["?fields=shares,comments.summary(true)"],
 
